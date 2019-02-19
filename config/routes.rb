@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :barcodes, only: [:create]
+  resources :barcodes, only: [:create] do
+    collection do
+      get 'photo'
+      get 'live'
+    end
+  end
 
   root 'home#index'
 end
