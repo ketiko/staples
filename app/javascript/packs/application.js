@@ -179,7 +179,6 @@ $(function() {
         const barcode = result.codeResult.code;
         const csrfToken = $('meta[name=csrf-token]').attr('content');
         const idCode = document.getElementById("code");
-        debugger;
         const headers = { headers: { 'X-CSRF-Token': csrfToken } };
         const params = { code: barcode };
         axios.post('/barcodes', params, headers)
