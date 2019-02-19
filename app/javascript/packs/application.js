@@ -183,14 +183,10 @@ $(function() {
         const params = { code: barcode };
         axios.post('/barcodes', params, headers)
           .then(function (response) {
-            const htmlCode = document.createTextNode(barcode);
-            idCode.appendChild(htmlCode);
-            console.log(response);
+            console.debug(response);
           })
             .catch(function (error) {
-              const htmlCode = document.createTextNode("Failure getting code");
-              idCode.appendChild(htmlCode);
-              console.log(error);
+              console.error(error);
             });
       }
 
